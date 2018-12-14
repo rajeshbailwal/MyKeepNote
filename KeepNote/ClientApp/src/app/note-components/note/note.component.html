@@ -1,0 +1,10 @@
+<mat-card class="keep-note-card" (click)='openEditView()' #matcard>
+  <mat-card-title>{{note.title}}</mat-card-title>
+  <mat-card-content>{{note.text}}</mat-card-content>
+  <mat-chip-list>
+    <mat-chip *ngFor="let tag of note.tags" [color]="primary">{{ tag }}</mat-chip>
+  </mat-chip-list>
+  <mat-card-actions class="keep-note-action-buttons">
+    <button mat-icon-button (click)="deleteNote($event, note.id);$event.stopPropagation()"> <i class="material-icons"> delete   </i></button>
+  </mat-card-actions>
+</mat-card>

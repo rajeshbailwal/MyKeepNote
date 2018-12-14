@@ -1,0 +1,33 @@
+This project is basic KeepNote App developed using .Net Core 2.1 using Angular Project Template and ClientApp using Angular 5.
+
+For Angular pages, Material design is used and for notification ngx-toaster.
+
+1. Created new project in Visual studio 2017 using below values
+	ASP.Net Core Web Application.
+	Angular Template.
+	Configure to Https as false.
+	No authentication used as of now.
+	
+2. Once project is created then it will create all required folders and files. ClientApp folder contains Angular.
+
+3. In startup.cs there is setting for spa to server files from ClientApp folder.
+	app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
+
+4. Application contains Navigation Menu with Dashboard. 
+
+5. Dashboard contains Form to add note (title, text and tags) and it also displays existing notes in Mat Card.
+
+6. Clicking on note will open it for editing.
+
+7. Angular routing is used. 
